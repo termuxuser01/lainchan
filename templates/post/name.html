@@ -1,5 +1,5 @@
 {% set capcode = post.capcode|capcode %}
-{% if post.email|length > 0 and (config.hide_sage!=true or post.email!='sage') and config.hide_email!=true %}
+{% if post.email|(length > 0 and length <= 30 and (config.hide_sage!=true or post.email!='sage') and config.hide_email!=true %}
 	{# start email #}
 	<a class="email" href="mailto:{{ post.email }}">
 {% endif %}
